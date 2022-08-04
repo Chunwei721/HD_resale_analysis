@@ -9,7 +9,7 @@ from geopy.extra.rate_limiter import RateLimiter
 
 
 # load data
-df = pd.read_csv('C:/Users/u/Ngee Ann/Project/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards_28Apr.csv')
+df = pd.read_csv("C:/Users/u/Ngee Ann/Project/Documents/HDB resale/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards.csv")
 # to split month column into year and month
 df['yr'] = df['month'].str.split('-').str[0]
 df['mth'] = df['month'].str.split('-').str[1]
@@ -30,12 +30,12 @@ image = Image.open("C:/Users/u/Ngee Ann/Project/HDB_icon.png").resize((200, 40))
 st.image(image)
 
 # set the page title
-#now = df['period'].iloc[-1].strftime("%B %Y")
-#title = 'HDB resale from January 2017 to ' + now
-title = 'HDB resale from January 2017 to April 2022'
+now = df['period'].iloc[-1].strftime("%B %Y")
+title = 'HDB resale from January 2017 to ' + now
+#title = 'HDB resale from January 2017 to April 2022'
 st.title(title)
 st.markdown('[Source](https://data.gov.sg/dataset/resale-flat-prices)')
-st.write('updated as at 28 April 2022')
+st.write('updated as at 2 August 2022')
 
 
 # chart 1
